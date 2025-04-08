@@ -7,12 +7,13 @@ from .models import User, Team, Activity, Leaderboard, Workout
 @api_view(['GET'])
 def api_root(request, format=None):
     base_url = request.build_absolute_uri('/')
+    suffix = 'crispy-space-spoon-4g4vr6g595pf7gj4-8000.app.github.dev/'
     return Response({
-        'users': base_url + 'api/users/',
-        'teams': base_url + 'api/teams/',
-        'activities': base_url + 'api/activities/',
-        'leaderboard': base_url + 'api/leaderboard/',
-        'workouts': base_url + 'api/workouts/'
+        'users': base_url + suffix + 'api/users/',
+        'teams': base_url + suffix + 'api/teams/',
+        'activities': base_url + suffix + 'api/activities/',
+        'leaderboard': base_url + suffix + 'api/leaderboard/',
+        'workouts': base_url + suffix + 'api/workouts/'
     })
 
 class UserViewSet(viewsets.ModelViewSet):
